@@ -1,8 +1,12 @@
 /* Styling for the navigation bar - ensuring that it is fixed to the top */
 #nav-bar {
+  clear: both;
   position: fixed;
   height: 80px;
   width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   background-color: #00a087;
   font-color: #e8fdff;
   padding-left: 2em;
@@ -25,4 +29,6 @@
     float: left;
     line-height: 2.5em;
   }
+
+
 

@@ -21,6 +21,13 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.container {
+  margin: 0 auto;
+  width: 450px;
+  height: 1000px;
+  background-color: white;
+}
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
