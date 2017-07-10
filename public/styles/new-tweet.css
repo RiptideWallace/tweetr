@@ -1,0 +1,38 @@
+.new-tweet {
+  overflow: auto;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-bottom: 5px;
+  text-align: center;
+  background: #eaeaed;
+  border-radius: 10px;
+  border-style: solid;
+}
+
+.counter {
+  text-align: right;
+}
+
+h2 {
+  text-align: left;
+  text-decoration: underline;
+}
+
+input {
+  display: inline-block;
+  float: left;
+}
+
+textarea {
+  padding-top: 3px;
+  padding-left: 5px;
+  height: 60px;
+  width: 325px;
+}
+
+span {
+  display: inline-block;
+  float: right;
+  font-style: italic;
+
+}
