@@ -1,3 +1,4 @@
+/* Styling for the navigation bar - ensuring that it is fixed to the top */
 #nav-bar {
   position: fixed;
   height: 80px;
@@ -7,3 +8,10 @@
   padding-left: 2em;
   padding-right: 2em;
 }
+
+/* Fixing the size of the logo into the CSS file, rather then it being in the HTML file */
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
