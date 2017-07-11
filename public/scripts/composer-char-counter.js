@@ -5,8 +5,8 @@ jQuery(document).ready(function() {
     var colour = $(this).siblings("span")
     if(maxLength < length) {
       colour.css('color', 'red');
-    } else {
-      colour.css('color', null);
+    } else if (maxLength > 0) {
+      colour.css('color', 'black');
     }
     length = maxLength - length;
   $(this).siblings("span").text(length);

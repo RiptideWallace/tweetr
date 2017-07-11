@@ -19,6 +19,9 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
 
+    <!-- Printed Tweets CSS -->
+    <link rel="stylesheet" href="/styles/printed-tweets.css" type="text/css">
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -27,6 +30,9 @@
 
     <!-- Character Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Hover State JS -->
+    <script type="text/javascript" src="/scripts/hover-state.js"></script>
 
 
   </head>
@@ -42,12 +48,28 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2 class="compose">Compose Tweet</h2>
         <form method="POST" action="/tweets/">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
+          <input class="tweet-button" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
+      </section>
+      <section id="printed-tweets">
+        <article>
+          <header class="tweet-header">
+            <img class="avatar" src="/images/smiley.png">
+            <h2 class="name">Bill Fields</h2>
+            <p class="username">@MrFields</p>
+          </header>
+            <p class="tweet-content">This is the tweet</p>
+          <footer class="tweet-footer">
+            <p class="time-stamp">10 days ago</p>
+            <input class="flag" type="image" src="/images/flag.png" alt="submit">
+            <input class="RT" type="image" src="/images/rt.png" alt="submit">
+            <input class="heart" type="image" src="/images/heart.png" alt="submit">
+          </footer>
+        </article>
       </section>
     </main>
   </body>

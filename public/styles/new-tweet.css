@@ -19,13 +19,14 @@
 }
 
 /* Styling for the 'Compose Tweets' title */
-h2 {
+.compose {
   text-align: left;
   text-decoration: underline;
+  padding-right: 10px;
 }
 
 /* Styling for the submit tweet button */
-input {
+.tweet-button {
   display: inline-block;
   float: left;
 }
