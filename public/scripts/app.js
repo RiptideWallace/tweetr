@@ -54,17 +54,6 @@ var data = [
 
 jQuery(document).ready(function() {
 
-function renderTweets(tweets) {
-  var newTweet = data
-  data.forEach(function(renderTweets) {
-    console.log(renderTweets);
-  });
-
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-}
-
 function createTweetElement(tweet) {
   var $tweet = $('<article>').addClass('tweet')
     .append($('<header class="tweet-header">')
@@ -83,9 +72,13 @@ function createTweetElement(tweet) {
     )
   return $tweet;
 }
-  //renderTweets(data);
-  let tweetElement = createTweetElement(data[0]);
-  $(".container").append(tweetElement);
+
+function renderTweets(tweets) {
+  for (var i = 0; i < data.length; i++)
+  $(".container").append(createTweetElement(data[0]));
+}
+  renderTweets(data);
+
 });
 
 
