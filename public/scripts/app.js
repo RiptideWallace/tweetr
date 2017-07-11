@@ -74,8 +74,9 @@ function createTweetElement(tweet) {
 }
 
 function renderTweets(tweets) {
-  for (var i = 0; i < data.length; i++)
-  $(".container").append(createTweetElement(data[0]));
+  tweets.forEach(function(tweet){
+    $(".container").append(createTweetElement(tweet));
+  });
 }
   renderTweets(data);
 
