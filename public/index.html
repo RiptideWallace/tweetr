@@ -25,6 +25,23 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
+    <script>
+      $(function() {
+        var button = $('.tweet-button');
+        button.on('click', function () {
+          $.ajax({
+            url: 'index.html',
+            data: $('textarea').serialize(),
+            method: 'GET',
+            success: function(indexHTML) {
+            }
+          });
+          event.preventDefault();
+        });
+      });
+    </script>
+
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
 
