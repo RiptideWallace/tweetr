@@ -4,7 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-var tweetData = {
+
+var data = [
+  {
     "user": {
       "name": "Newton",
       "avatars": {
@@ -18,13 +20,72 @@ var tweetData = {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
     "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": {
+        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
+        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
+        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
+      },
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  },
+  {
+    "user": {
+      "name": "Johann von Goethe",
+      "avatars": {
+        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
+        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+      },
+      "handle": "@johann49"
+    },
+    "content": {
+      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+    },
+    "created_at": 1461113796368
   }
-
-var tweet = tweetData;
-
-console.log(tweet);
+];
 
 jQuery(document).ready(function() {
-  $(".container").append(tweetData.user.name);
+
+function renderTweets(tweets) {
+  var newTweet = data
+  data.forEach(function(renderTweets) {
+    console.log(renderTweets);
+  });
+
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
+}
+
+function createTweetElement(tweet) {
+  var $tweet = $('<article>').addClass('tweet')
+    .append($('<header class="tweet-header">')
+      .append($('<img class="avatar">').attr("src", tweet.user.avatars.small))
+      .append($('<h2 class="name">').text(tweet.user.name))
+      .append($('<p class="username">').text(tweet.user.handle))
+    )
+
+    .append($('<p class="tweet-content">').text(tweet.content.text))
+
+    .append($('<footer class="tweet-footer">')
+      .append($('<p class="time-stamp">').text(tweet.created_at))
+      .append($('<input class="flag" type="image" alt="submit">').attr("src", "/images/flag.png"))
+      .append($('<input class="RT" type="image" alt="submit">').attr("src", "/images/rt.png"))
+      .append($('<input class="heart" type="image" alt="submit" >').attr("src", "/images/heart.png"))
+    )
+  return $tweet;
+}
+  //renderTweets(data);
+  let tweetElement = createTweetElement(data[0]);
+  $(".container").append(tweetElement);
 });
+
 
