@@ -1,3 +1,4 @@
+/* Styling for the block where we compose tweets */
 .new-tweet {
   overflow: auto;
   padding-right: 2em;
@@ -7,32 +8,32 @@
   background: #eaeaed;
   border-radius: 10px;
   border-style: solid;
+  border-width: 1px;
 }
 
+/* Styling for the character counter */
 .counter {
-  text-align: right;
+  display: inline-block;
+  float: right;
+  font-style: italic;
 }
 
+/* Styling for the 'Compose Tweets' title */
 h2 {
   text-align: left;
   text-decoration: underline;
 }
 
+/* Styling for the submit tweet button */
 input {
   display: inline-block;
   float: left;
 }
 
+/*Styling for the text box in which the tweets are composed */
 textarea {
   padding-top: 3px;
   padding-left: 5px;
   height: 60px;
   width: 325px;
-}
-
-span {
-  display: inline-block;
-  float: right;
-  font-style: italic;
-
 }

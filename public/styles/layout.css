@@ -21,6 +21,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+/* Styling for the main section of the site where the tweets will go */
 .container {
   margin: 0 auto;
   width: 450px;
