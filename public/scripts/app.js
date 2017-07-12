@@ -85,10 +85,11 @@ jQuery(document).ready(function() {
       url: 'http://localhost:8080/tweets',
       method: 'GET',
       success: function(renderTweets) {
-        console.log('Success:', initialTweets);
+        console.log('Success:', renderTweets);
       }
     });
   }
+  loadTweets();
 });
 
 

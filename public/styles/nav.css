@@ -30,5 +30,12 @@
     line-height: 2.5em;
   }
 
+  #nav-bar .compose-button {
+    margin-top: 1em;
+    float: right;
+    height: 45%;
+    width: 13%;
+  }
+
 
 
