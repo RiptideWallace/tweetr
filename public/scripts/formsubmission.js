@@ -9,9 +9,23 @@ jQuery(document).ready(function(){
       alert("Your Tweet is Too Long");
       return false;
     } else {
+      $('textarea').val("");
       return true;
     }
   });
+  $('.tweet-button').on('click', function (){
+    location.reload(true);
+  });
 });
+// debugger
+//   $('.tweet-form').submit(function(){
+//     console.log("submit");
+//       $(".container").append('.tweet-form');
+//   });
+
+
+
+
+
 
 

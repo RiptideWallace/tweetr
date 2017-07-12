@@ -30,10 +30,10 @@
         var button = $('.tweet-button');
         button.on('click', function () {
           $.ajax({
-            url: 'index.html',
+            url: 'http://localhost:8080/tweets',
             data: $('textarea').serialize(),
-            method: 'GET',
-            success: function(indexHTML) {
+            method: 'POST',
+            success: function() {
             }
           });
           event.preventDefault();
@@ -73,12 +73,13 @@
     <main class="container">
       <section class="new-tweet">
         <h2 class="compose">Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
+        <form class="tweet-form" id="form-tweet" method="POST" action="/tweets">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input class="tweet-button" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
+      <div id="form-output"></div>
       <section id="printed-tweets">
         <article class="tweet">
           <header class="tweet-header">
