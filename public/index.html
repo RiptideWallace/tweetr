@@ -43,22 +43,15 @@
   </head>
 
   <body>
-
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
-      <!-- <form class="register" action='/register/'>
-        <input type="submit" value="Register">
-      </form>
-      <form class="login" action='/login'>
-        <input type="submit" value="Login">
-      </form> -->
       <input class="compose-button" type="image" alt="submit" src="/images/compose.png">
     </nav>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
+    <!-- Section for composing tweet -->
       <section class="new-tweet">
         <h2 class="compose">Compose Tweet</h2>
         <form class="tweet-form" id="form-tweet" method="POST" action="/tweets">
@@ -67,6 +60,7 @@
           <span class="counter">140</span>
         </form>
       </section>
+      <!-- Where completed tweets are shown -->
       <div id="form-output"></div>
       <section id="printed-tweets">
         <article class="tweet">
@@ -75,8 +69,7 @@
             <h2 class="name">Bill Fields</h2>
             <p class="username">@MrFields</p>
           </header>
-            <p class="tweet-content">This is the tweet</p>
-
+          <p class="tweet-content">This is the tweet</p>
           <footer class="tweet-footer">
             <input class="flag" type="image" src="/images/flag.png" alt="submit">
             <input class="RT" type="image" src="/images/rt.png" alt="submit">

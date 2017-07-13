@@ -1,8 +1,9 @@
+// Code to change the character counter as input to submitted into the text area
 jQuery(document).ready(function() {
   $('textarea').keydown(function (){
-    var maxLength = 140;
-    var length = $(this).val().length;
-    var colour = $(this).siblings("span")
+    let maxLength = 140;
+    let length = $(this).val().length;
+    let colour = $(this).siblings("span");
     if(maxLength < length) {
       colour.css('color', 'red');
     } else if (maxLength > 0) {
@@ -10,5 +11,5 @@ jQuery(document).ready(function() {
     }
     length = maxLength - length;
   $(this).siblings("span").text(length);
-    });
+  });
 });

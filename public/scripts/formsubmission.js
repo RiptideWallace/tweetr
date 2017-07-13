@@ -1,3 +1,4 @@
+// Code that brings up error messages for when a tweet has no, or too much, content
 jQuery(document).ready(function(){
   $('.tweet-button').on('click', function(event){
     let maxLength = 140;
@@ -10,6 +11,7 @@ jQuery(document).ready(function(){
     } else if(length == 0) {
       alert("Please Input Text to Submit");
     } else {
+// Code to automatically load tweets when they are submitted, instead of having to refresh the page
       $.ajax({
         url: 'http://localhost:8080/tweets',
         data: $('textarea').serialize(),

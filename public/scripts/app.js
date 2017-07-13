@@ -47,13 +47,14 @@ function loadTweets() {
   }
 
   function milliToDate(timeStamp) {
-    var time = new Date(timeStamp).getTime();
-    var date = new Date(time);
+    let time = new Date(timeStamp).getTime();
+    let date = new Date(time);
 
     return date
   }
 
   milliToDate();
+
 
 
 
