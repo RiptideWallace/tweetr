@@ -23,7 +23,7 @@ function createTweetElement(tweet) {
         .append($('<input class="flag" type="image" alt="submit">').attr("src", "/images/flag.png"))
         .append($('<input class="RT" type="image" alt="submit">').attr("src", "/images/rt.png"))
         .append($('<input class="heart" type="image" alt="submit" >').attr("src", "/images/heart.png"))
-        .append($('<p class="time-stamp">').text(milliToDate(tweet.created_at)))
+        .append($('<p class="time-stamp">').text(timeSince(tweet.created_at)))
 
       )
     return tweet;
@@ -46,15 +46,30 @@ function loadTweets() {
     });
   }
 
-  function milliToDate(timeStamp) {
-    let time = new Date(timeStamp).getTime();
-    let date = new Date(time);
-
-    return date
+ function timeSince(date) {
+    var seconds = Math.floor((new Date() - date) / 1000);
+    var interval = Math.floor(seconds / 31536000);
+    if (interval > 0) {
+        return interval + " years ago";
+    }
+    interval = Math.floor(seconds / 2592000);
+    if (interval > 0) {
+        return interval + " months ago";
+    }
+    interval = Math.floor(seconds / 86400);
+    if (interval > 0) {
+        return interval + " days ago";
+    }
+    interval = Math.floor(seconds / 3600);
+    if (interval > 0) {
+        return interval + " hours ago";
+    }
+    interval = Math.floor(seconds / 60);
+    if (interval > 0) {
+        return interval + " minutes ago";
+    }
+    return Math.floor(seconds) + " seconds ago";
   }
-
-  milliToDate();
-
 
 
 

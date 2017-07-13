@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -48,48 +46,41 @@
     <script type="text/javascript" src="/scripts/compose.js"></script>
 
   </head>
-
   <body>
-    <!-- Top nav bar (fixed) -->
+
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
-      <a href="/register">Register</a>
-      <a href="/login">Login</a>
-      <input class="compose-button" type="image" alt="submit" src="/images/compose.png">
+      <a href="/">Home</a>
     </nav>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-    <!-- Section for composing tweet -->
-      <section class="new-tweet">
-        <h2 class="compose">Compose Tweet</h2>
-        <form class="tweet-form" id="form-tweet" method="POST" action="/tweets">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
-          <input class="tweet-button" type="submit" value="Tweet">
-          <span class="counter">140</span>
-        </form>
-      </section>
-      <!-- Where completed tweets are shown -->
-      <div id="form-output"></div>
-      <section id="printed-tweets">
-        <article class="tweet">
-          <header class="tweet-header">
-            <img class="avatar" src="/images/smiley.png">
-            <h2 class="name">Bill Fields</h2>
-            <p class="username">@MrFields</p>
-          </header>
-          <p class="tweet-content">This is the tweet</p>
-          <footer class="tweet-footer">
-            <input class="flag" type="image" src="/images/flag.png" alt="submit">
-            <input class="RT" type="image" src="/images/rt.png" alt="submit">
-            <input class="heart" type="image" src="/images/heart.png" alt="submit">
-            <p class="time-stamp">10 days ago</p>
-          </footer>
-        </article>
-      </section>
+    <main class='regContainer'>
+      <form action="/register" method="POST">
+      <h3>Register For Tweeter</h3>
+      <div class="name">
+        <label for="name">Full Name</label>
+        <input id="regName" type="name" name="name" placeholder= "First Name & Last Name">
+      </div>
+      <div>
+        <label for="name">Username</label>
+        <input id="regHandle" type="handle" name="handle" placeholder= "@username">
+      </div>
+      <div>
+        <label class="avatar" for="name">Avatar</label>
+        <input id="regAvatar" type="name" name="name" placeholder= "LinkToImage.png">
+      </div>
+      <div>
+        <label class="email" for="email">Email</label>
+        <input id="regEmail" type="email" name="email" placeholder="Type Your Email">
+      </div>
+      <div>
+        <label class="password" for="password">Password</label>
+        <input id="regPassword" type="password" name="password" placeholder="Choose A Password">
+      </div>
+      <input class="submit" type="submit" value="Submit">
+      </form>
     </main>
-    <footer>
-      <p class="page-footer">TweeterApp 2017</p>
+    <footer class="regFooter">
+      <p>TweeterApp 2017</p>
     </footer>
   </body>
 </html>
