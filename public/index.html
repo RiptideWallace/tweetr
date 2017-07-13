@@ -25,23 +25,6 @@
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
-    <script>
-      $(function() {
-        var button = $('.tweet-button');
-        button.on('click', function () {
-          $.ajax({
-            url: 'http://localhost:8080/tweets',
-            data: $('textarea').serialize(),
-            method: 'POST',
-            success: function() {
-            }
-          });
-          event.preventDefault();
-        });
-      });
-    </script>
-
-
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
 
@@ -57,7 +40,6 @@
     <!-- Compose Tweet JS -->
     <script type="text/javascript" src="/scripts/compose.js"></script>
 
-
   </head>
 
   <body>
@@ -66,7 +48,13 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
-      <input class="compose-button" type="submit" value="Compose">
+      <!-- <form class="register" action='/register/'>
+        <input type="submit" value="Register">
+      </form>
+      <form class="login" action='/login'>
+        <input type="submit" value="Login">
+      </form> -->
+      <input class="compose-button" type="image" alt="submit" src="/images/compose.png">
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -88,14 +76,18 @@
             <p class="username">@MrFields</p>
           </header>
             <p class="tweet-content">This is the tweet</p>
+
           <footer class="tweet-footer">
-            <p class="time-stamp">10 days ago</p>
             <input class="flag" type="image" src="/images/flag.png" alt="submit">
             <input class="RT" type="image" src="/images/rt.png" alt="submit">
             <input class="heart" type="image" src="/images/heart.png" alt="submit">
+            <p class="time-stamp">10 days ago</p>
           </footer>
         </article>
       </section>
     </main>
+    <footer>
+      <p class="page-footer">TweeterApp 2017</p>
+    </footer>
   </body>
 </html>

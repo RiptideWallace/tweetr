@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-  $('textarea').keyup(function (){
+  $('textarea').keydown(function (){
     var maxLength = 140;
     var length = $(this).val().length;
     var colour = $(this).siblings("span")

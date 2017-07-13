@@ -1,27 +1,30 @@
 jQuery(document).ready(function(){
-  $('.tweet-button').on('click', function(){
+  $('.tweet-button').on('click', function(event){
     let maxLength = 140;
     let length = $('textarea').val().length;
-    if(length == 0) {
-      alert("Please Input Text to Submit");
-      return false;
-    } else if (length > maxLength) {
+    event.preventDefault();
+    if (length > maxLength) {
       alert("Your Tweet is Too Long");
-      return false;
-    } else {
       $('textarea').val("");
-      return true;
+      $('.counter').text('140').css('color', 'black');
+    } else if(length == 0) {
+      alert("Please Input Text to Submit");
+    } else {
+      $.ajax({
+        url: 'http://localhost:8080/tweets',
+        data: $('textarea').serialize(),
+        method: 'POST',
+        success: function() {
+          $('textarea').val("");
+          $('#printed-tweets').empty();
+          loadTweets();
+          $('.counter').text('140');
+        }
+      });
     }
   });
-  $('.tweet-button').on('click', function (){
-    location.reload(true);
-  });
 });
-// debugger
-//   $('.tweet-form').submit(function(){
-//     console.log("submit");
-//       $(".container").append('.tweet-form');
-//   });
+
 
 
 

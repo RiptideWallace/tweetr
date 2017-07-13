@@ -6,7 +6,10 @@
 
 jQuery(document).ready(function() {
 
-  function createTweetElement(tweet) {
+  loadTweets();
+});
+
+function createTweetElement(tweet) {
     var tweet = $('<article>').addClass('tweet')
       .append($('<header class="tweet-header">')
         .append($('<img class="avatar">').attr("src", tweet.user.avatars.small))
@@ -17,21 +20,22 @@ jQuery(document).ready(function() {
       .append($('<p class="tweet-content">').text(tweet.content.text))
 
       .append($('<footer class="tweet-footer">')
-        .append($('<p class="time-stamp">').text(tweet.created_at))
         .append($('<input class="flag" type="image" alt="submit">').attr("src", "/images/flag.png"))
         .append($('<input class="RT" type="image" alt="submit">').attr("src", "/images/rt.png"))
         .append($('<input class="heart" type="image" alt="submit" >').attr("src", "/images/heart.png"))
+        .append($('<p class="time-stamp">').text(milliToDate(tweet.created_at)))
+
       )
     return tweet;
   }
 
-  function renderTweets(tweets) {
+function renderTweets(tweets) {
     tweets.forEach(function(tweet){
-      $(".container").append(createTweetElement(tweet));
+      $("#printed-tweets").append(createTweetElement(tweet));
     });
   }
 
-  function loadTweets() {
+function loadTweets() {
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'GET',
@@ -41,8 +45,15 @@ jQuery(document).ready(function() {
       },
     });
   }
-  loadTweets();
-});
+
+  function milliToDate(timeStamp) {
+    var time = new Date(timeStamp).getTime();
+    var date = new Date(time);
+
+    return date
+  }
+
+  milliToDate();
 
 
 

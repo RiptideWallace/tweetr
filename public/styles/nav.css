@@ -1,6 +1,6 @@
 /* Styling for the navigation bar - ensuring that it is fixed to the top */
 #nav-bar {
-  clear: both;
+    clear: both;
   position: fixed;
   height: 80px;
   width: 100%;
@@ -31,11 +31,23 @@
   }
 
   #nav-bar .compose-button {
-    margin-top: 1em;
+    margin-top: 1.25em;
     float: right;
     height: 45%;
-    width: 13%;
+    width: 5%;
   }
 
+  #nav-bar .login {
+
+  }
+
+  #nav-bar .register {
+    margin-top: 25px;
+    margin-left: 350px;
+
+  }
+  .page-footer {
+    text-align: center;
+  }
 
 
