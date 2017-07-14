@@ -5,7 +5,6 @@
  */
 
 jQuery(document).ready(function() {
-
   loadTweets();
 });
 //Function to apply css rules to tweets when they are loaded
@@ -47,8 +46,8 @@ function loadTweets() {
     },
   });
 }
-  //Function to change the time ago from milliseconds to the time ago
-  //a tweet was posted
+//Function to change the time ago from milliseconds to the time ago
+//a tweet was posted
 function timeSince(date) {
   var seconds = Math.floor((new Date() - date) / 1000);
   var interval = Math.floor(seconds / 31536000);
